@@ -2,7 +2,7 @@
 *By Ethar Almaghrabi*
 
 **Links**
-*Github Repository:* 
+*Github Repository:* https://github.com/ethar615/RecipeManagerTracker.git 
 CSS used by this and edited by me: https://startbootstrap.com/theme/business-casual#google_vignette
 Confirm deletion button: https://www.w3schools.com/js/js_popup.asp 
 
@@ -11,13 +11,13 @@ Notes:
 MongoDB details:
 Database Name: RecipeLib
 Collection name: Cooking_recipes
-
+ 
 2. To run from visual studio: Go to the Terminal and run this command --> nodemon .\server.js
 -----------------------------
 Project Description:
 Welcome to the Recipe Manager Tracker Web Application! This project aims to provide a platform for users to create, view, update, and delete recipes in a simple and fast way. This README outlines the key features, structure, and how to use the application.
 Features
-1. Landing Page:
+1. Landing Page: 
 **URLs:**
     Home: http://localhost:3000/
     Recipe List: http://localhost:3000/recipeslist
