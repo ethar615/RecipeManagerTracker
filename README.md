@@ -1,35 +1,48 @@
-## Job Satisfaction Survey
-By Group 16: Tala Bashanfar, Ethar Almaghrabi, Ashvien Rameshkumar 
+## Recipe Manager Tracker
+*By Ethar Almaghrabi*
 
-Github Repository: https://github.com/ethar615/GroupProject16_part1 
+**Links**
+*Github Repository:* 
+CSS used by this and edited by me: https://startbootstrap.com/theme/business-casual#google_vignette
+Confirm deletion button: https://www.w3schools.com/js/js_popup.asp 
 
 Notes: 
 1. To run this program you need to create a mongoDB and collection in your local machine
 MongoDB details:
-Database Name: SurveyLib
-Collection name: Job_surveys
+Database Name: RecipeLib
+Collection name: Cooking_recipes
 
 2. To run from visual studio: Go to the Terminal and run this command --> nodemon .\server.js
 -----------------------------
-Project description:
-Welcome to the Job Satisfaction Survey Web Application! This project aims to provide a functional platform for creating and managing job satisfaction surveys. This README outlines the features of the first release and the project structure.
-
+Project Description:
+Welcome to the Recipe Manager Tracker Web Application! This project aims to provide a platform for users to create, view, update, and delete recipes in a simple and fast way. This README outlines the key features, structure, and how to use the application.
 Features
-1. Landing Page
-Purpose: The main entry point of the web application, using this URL: http://localhost:3000/ or http://localhost:3000/surveyslist
-Elements:
-Site Name & team logo: Clearly displayed at the top.
-Hero Button: A prominent button labeled "Create Survey" to initiate the survey creation process.
-List of Surveys: A dashboard view that lists active and publicly available surveys.
+1. Landing Page:
+**URLs:**
+    Home: http://localhost:3000/
+    Recipe List: http://localhost:3000/recipeslist
+**Elements:**
+Title and Description: Displays "Welcome to Recipe Manager" with a brief description.
+Buttons:
+    - "View Recipes" to see all saved recipes.
+    - "Add New Recipe" to create a new recipe entry.
+UI: The splash page uses a visually appealing background image with centered buttons.
 
 2. CRUD Functionality
-Create: Users can create new surveys.
-Read: Users can view a list of existing surveys along with their details.
-Update: Users can edit existing surveys.
-Delete: Users can delete surveys that are no longer needed.
+Create: users can add new recipes with the following details:
+    - Recipe Name
+    - Category (e.g., breakfast, lunch, dinner)
+    - Preparation Time
+    - Calories
+    - Ingredients
 
-3. Authentication
-Authentication is not included in this release. The focus is on implementing core CRUD operations.
+Read: Users can view a list of all existing recipes in a table format.
+    Each entry includes buttons for editing or deleting the recipe.
 
-4. UI/UX
-The user interface is functional but not polished. The priority is on usability and core functionality.
+Update: can edit recipe details by clicking the "Edit" button.
+Delete: can delete a recipe using a stylish confirmation modal that appears when clicking the "Delete" button.
+
+3. Enhanced UI/UX:
+The user interface has been enhanced for a polished look and better usability.
+Centered Layout: At the landing page, Add and Edit recipe forms are centered for better user interaction which gives the home page a splash layout.
+The application follows a consistent design pattern using Bootstrap's styling framework.

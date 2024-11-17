@@ -1,0 +1,53 @@
+<%- include ../Partials/header.ejs%>
+<%- include ../Partials/main_nav.ejs%>
+<!--content for the add page-->
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <!-- centering the Title -->
+            <h1 class="text-center mb-4"><%= title %></h1>
+            <form class="form" method="POST">
+                <!-- recipe Name -->
+                <div class="form-group mb-3">
+                    <label for="nameTextField" class="fw-bold">Recipe Name</label>
+                    <input type="text" class="form-control" id="nameTextField" placeholder="Enter the Recipe's Name" name="Name" required>
+                </div>
+                
+                <!-- recipe Category -->
+                <div class="form-group mb-3">
+                    <label for="authorTextField" class="fw-bold">Recipe Category</label>
+                    <input type="text" class="form-control" id="authorTextField" placeholder="Enter the Category (e.g. breakfast, lunch, dinner)" name="Category" required>
+                </div>
+                
+                <!-- Preparation Time -->
+                <div class="form-group mb-3">
+                    <label for="publishedTextField" class="fw-bold">Preparation Time</label>
+                    <input type="text" class="form-control" id="publishedTextField" placeholder="Estimated time (e.g., 30 minutes, 1 hour)" name="PreperationTime" required>
+                </div>
+                
+                <!-- calories -->
+                <div class="form-group mb-3">
+                    <label for="CaloriesTextField" class="fw-bold">Calories</label>
+                    <input type="text" class="form-control" id="CaloriesTextField" placeholder="Enter the Estimated Calorie Number" name="Calories" required>
+                </div>
+                
+                <!-- Ingredients -->
+                <div class="form-group mb-4">
+                    <label for="priceTextField" class="fw-bold">Ingredients</label>
+                    <textarea class="form-control" id="priceTextField" placeholder="Enter the Ingredients separated with commas" name="Ingredients" required></textarea>
+                </div>
+                
+                <!-- submit and cancel Buttons -->
+                <div class="text-center">
+                    <button class="btn btn-primary btn-lg me-2" type="submit">
+                        <i class="fa fa-edit"></i> Submit
+                    </button>
+                    <button class="btn btn-secondary btn-lg" type="button" onclick="window.history.back();">
+                        <i class="fa fa-undo"></i> Cancel
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<%- include ../Partials/footer.ejs%>

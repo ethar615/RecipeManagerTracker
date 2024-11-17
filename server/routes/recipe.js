@@ -2,26 +2,26 @@ var express = require('express');
 var router = express.Router();
 let mongoose = require('mongoose');
 // telling my router that I have this model
-let Survey = require('../model/survey.js');
-const survey = require('../model/survey.js');
-let surveyController = require('../controllers/surevy.js')
-/* Get route for the survey list - Read Operation */
+let Recipe = require('../model/recipe.js');
+const recipe = require('../model/recipe.js');
+let recipeController = require('../controllers/recipe.js')
+/* Get route for the recipe list - Read Operation */
 /*
 GET,
 Post,
 Put --> Edit/Update
 */
-/* Read Operation --> Get route for displaying the surveys list */
+/* Read Operation --> Get route for displaying the recipes list */
 router.get('/',async(req,res,next)=>{
 try{
-    const SurveyList = await Survey.find();
-    res.render('Survey/list',{
-        title:'Surveys',
-        SurveyList:SurveyList
+    const RecipeList = await Recipe.find();
+    res.render('Recipe/list',{
+        title:'Recipes',
+        RecipeList:RecipeList
     })}
     catch(err){
         console.error(err);
-        res.render('Survey/list',{
+        res.render('Recipe/list',{
             error:'Error on the server'
         })
     }
@@ -29,14 +29,14 @@ try{
 /* Create Operation --> Get route for displaying me the Add Page */
 router.get('/add',async(req,res,next)=>{
     try{
-        res.render('Survey/add',{
-            title: 'Create a Survey'
+        res.render('Recipe/add',{
+            title: 'Create a Recipe'
         })
     }
     catch(err)
     {
         console.error(err);
-        res.render('Survey/list',{
+        res.render('Recipe/list',{
             error:'Error on the server'
         })
     }
@@ -44,21 +44,21 @@ router.get('/add',async(req,res,next)=>{
 /* Create Operation --> Post route for processing the Add Page */
 router.post('/add',async(req,res,next)=>{
     try{
-        let newSurvey = Survey({
+        let newRecipe = Recipe({
             "Name":req.body.Name,
-            "JobTitle":req.body.JobTitle,
-            "Satisfaction":req.body.Satisfaction,
-            "DurationOfEmployment":req.body.DurationOfEmployment,
-            "Improvments":req.body.Improvments
+            "Category":req.body.Category,
+            "PreperationTime":req.body.PreperationTime,
+            "Calories":req.body.Calories,
+            "Ingredients":req.body.Ingredients
         });
-        Survey.create(newSurvey).then(()=>{
-            res.redirect('/surveyslist');
+        Recipe.create(newRecipe).then(()=>{
+            res.redirect('/recipeslist');
         })
     }
     catch(err)
     {
         console.error(err);
-        res.render('Survey/list',{
+        res.render('Recipe/list',{
             error:'Error on the server'
         })
     }
@@ -67,11 +67,11 @@ router.post('/add',async(req,res,next)=>{
 router.get('/edit/:id',async(req,res,next)=>{
     try{
         const id = req.params.id;
-        const surveyToEdit= await Survey.findById(id);
-        res.render('Survey/edit',
+        const recipeToEdit= await Recipe.findById(id);
+        res.render('Recipe/edit',
             {
-                title:'Edit Survey',
-                Survey:surveyToEdit
+                title:'Edit Recipe',
+                Recipe:recipeToEdit
             }
         )
     }
@@ -85,21 +85,21 @@ router.get('/edit/:id',async(req,res,next)=>{
 router.post('/edit/:id',async(req,res,next)=>{
     try{
         let id=req.params.id;
-        let updatedSurvey = Survey({
+        let updatedRecipe = Recipe({
             "_id":id,
             "Name":req.body.Name,
-            "JobTitle":req.body.JobTitle,
-            "Satisfaction":req.body.Satisfaction,
-            "DurationOfEmployment":req.body.DurationOfEmployment,
-            "Improvments":req.body.Improvments
+            "Category":req.body.Category,
+            "PreperationTime":req.body.PreperationTime,
+            "Calories":req.body.Calories,
+            "Ingredients":req.body.Ingredients
         });
-        Survey.findByIdAndUpdate(id,updatedSurvey).then(()=>{
-            res.redirect('/surveyslist')
+        Recipe.findByIdAndUpdate(id,updatedRecipe).then(()=>{
+            res.redirect('/recipeslist')
         })
     }
     catch(err){
         console.error(err);
-        res.render('Survey/list',{
+        res.render('Recipe/list',{
             error:'Error on the server'
         })
     }
@@ -108,13 +108,13 @@ router.post('/edit/:id',async(req,res,next)=>{
 router.get('/delete/:id',async(req,res,next)=>{
     try{
         let id=req.params.id;
-        Survey.deleteOne({_id:id}).then(()=>{
-            res.redirect('/surveyslist')
+        Recipe.deleteOne({_id:id}).then(()=>{
+            res.redirect('/recipeslist')
         })
     }
     catch(error){
         console.error(err);
-        res.render('Survey/list',{
+        res.render('Recipe/list',{
             error:'Error on the server'
         })
     }

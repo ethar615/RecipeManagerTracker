@@ -1,6 +1,60 @@
-<%- include Partials/header.ejs%>
-<%- include Partials/main_nav.ejs%>
-    <!--Main content-->
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-<%- include Partials/footer.ejs%>
+<%- include('partials/header') %>
+
+<!-- Splash Style Main Section -->
+
+<main class="splash-container d-flex align-items-center justify-content-center vh-100">
+    <div class="splash-content text-center">
+        <!-- Main Heading -->
+        <h1 class="display-4 fw-bold text-light">Welcome to the Recipe Manager Tracker</h1>
+        <p class="lead text-light">Easily track your favorite recipes and ingredients!</p>
+        
+        <!-- Action Buttons -->
+        <div class="mt-4">
+            <a href="/recipeslist" class="btn btn-lg btn-primary me-3 fw-bold">📖 View Recipes</a>
+            <a href="/recipeslist/add" class="btn btn-lg btn-secondary fw-bold">➕ Add New Recipe</a>
+        </div>
+    </div>
+</main>
+
+<style>
+    /* Overlay Effect for Better Text Visibility */
+    .splash-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+    }
+    /* Centered Content Styling */
+    .splash-content {
+        z-index: 1;
+        max-width: 600px;
+        padding: 20px;
+        color: #fff;
+    }
+    /* Button Styling */
+    .btn-primary {
+        background-color: #ff7f50;
+        border-color: #ff7f50;
+        transition: background-color 0.3s ease;
+    }
+    .btn-primary:hover {
+        background-color: #e67343;
+        border-color: #e67343;
+    }
+
+    .btn-secondary {
+        background-color: #ffa07a;
+        border-color: #ffa07a;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+        background-color: #be6144;
+        border-color: #be6144;
+    }
+</style>
+
+<%- include('partials/footer') %>
