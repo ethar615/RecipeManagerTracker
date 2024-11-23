@@ -93,7 +93,7 @@
 
 /* Body background styling */
 body {
-  background-image: url("../assets/img/bg.jpg");
+  background-image: url("/Assets/img/bg.jpg");
   background-attachment: fixed;
   background-position: center center;
   background-size: cover;
@@ -4769,7 +4769,7 @@ progress {
   }
 
 body {
-  background-image: url("../assets/img/bg.jpg");
+  background-image: url("/Assets/img/bg.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
